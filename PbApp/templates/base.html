@@ -23,8 +23,10 @@
     .navbar-nav li a:active{
         background-color: rgba(217, 217, 217, 0.1);
     }
-    .dropdown-item{
-        background-color: rgba(217, 217, 217, 0.1);
+     /*Haciendo que el menu se desplegue al pasar el mouse encima*/
+    .dropdown:hover .dropdown-menu{
+        display: block;
+        margin-top: 0;
     }
 </style>
 </head>
@@ -33,10 +35,13 @@
 <!--Navbar-->
 <nav class='navbar navbar-expand-md' style="font-family: 'Times New Roman', Times, serif; color: aliceblue;">
     <a class='navbar-brand mr-auto' href="{% url 'home' %}">
-        <img src=" {%  static 'img\home.png' %}" alt="home" width="24px" class="float-left" >
+        <img src=" {%  static 'img\home.png' %}" alt="home" width="28px" class="float-left" title="Home">
     </a>
-    <a class='navbar-brand ml-center' href="http://www.etecsa.cu" style="margin-left: 40px;">
-        <img src=" {%  static 'img\etecsa w.png' %}" alt="home" width="40px" >
+    <a class='navbar-brand ml-center' href="http://www.etecsa.cu" style="margin-left: 20px;">
+        <img src=" {%  static 'img\etecsa w.png' %}" alt="etecsa" width="40px" title="www.etecsa.cu">
+    </a>
+    <a class='navbar-brand ml-center' href="http://localhost:8000/admin" style="margin-left: auto;">
+        <img src=" {%  static 'img\ajuste.png' %}" alt="admin" width="24px" title="Admin" class="float-left">
     </a>
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <img src=" {%  static 'img\more.png' %}" alt="home" width="25px" class="float-left" >
@@ -45,7 +50,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a style="color: aliceblue;" class="nav-link dropdown-toggle" data-toggle='dropdown' href="{% url 'rel_trgtas_vendidas' %}">RELACION DE TARJETAS VENDIDAS</a>
-                <div class="dropdown-menu dropdown-menu-right" style="background-color: transparent;">
+                <div class="dropdown-menu dropdown-menu-right" style="background-color: rgba(217, 217, 217, 0.1);">
                     <a style="color: aliceblue;" class="dropdown-item" href="{% url 'rel_trgtas_vendidas_cup' %}">CUP</a>
                     <a style="color: aliceblue;" class="dropdown-item" href="{% url 'rel_trgtas_vendidas_nauta' %}">NAUTA</a>
                     <a style="color: aliceblue;" class="dropdown-item" href="{% url 'rel_trgtas_vendidas_movil' %}">MÓVIL</a>
@@ -53,14 +58,14 @@
             </li>
             <li class="nav-item dropdown">
                 <a style="color: aliceblue;" class="nav-link dropdown-toggle" data-toggle='dropdown' href="{% url 'facturaciones' %}">FACTURACIONES</a>
-                <div class='dropdown-menu dropdown-menu-right' style="background-color: transparent;">
+                <div class='dropdown-menu dropdown-menu-right' style="background-color: rgba(217, 217, 217, 0.1);">
                     <a style="color: aliceblue;" class='dropdown-item' href="{% url 'facturaciones_cup' %}">CUP</a>
                     <a style="color: aliceblue;" class='dropdown-item' href="{% url 'facturaciones_cuc' %}">CUC</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a style="color: aliceblue;" class="nav-link dropdown-toggle" data-toggle="dropdown" href="{% url 'extras' %}">EXTRAS</a>
-                <div class="dropdown-menu dropdown-menu-right" style="background-color: transparent;">
+                <div class="dropdown-menu dropdown-menu-right" style="background-color: rgba(217, 217, 217, 0.1);">
                     <a style="color: aliceblue;" class="dropdown-item" href="{% url 'extras_arqueo' %}">ARQUEO</a>
                     <a style="color: aliceblue;" class="dropdown-item" href="{% url 'ap' %}">AP</a>
                     <a style="color: aliceblue;" class="dropdown-item" href="{% url 'prestamistas' %}">PRESTAMISTAS</a>
