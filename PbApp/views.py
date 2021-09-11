@@ -48,6 +48,7 @@ def menu_onat_2020(request):
 
 def total_anual(request):
     years=datoday[:4]
+    years=datoday[:4]
     resultados=trtv_cup.objects.filter(fecha__icontains=years).order_by('fecha')
     tresultados=t_anual.objects.filter(fecha__icontains=years)
     date_total=[]
